@@ -2,7 +2,6 @@ package Service;
 
 import Model.Captcha;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Dictionary;
 import java.util.Hashtable;

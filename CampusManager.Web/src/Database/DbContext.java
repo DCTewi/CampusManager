@@ -1,13 +1,13 @@
 package Database;
 
-import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class DbContext<T>
 {
-    protected static String ConnectString = "jdbc:sqlite:D:\\OneDrive\\Develop\\Solutions\\CampusManager\\CampusManager.Web\\CampusManager.db";
+    protected static String DbPath = "C:\\Users\\dctew\\OneDrive\\Develop\\Solutions\\CampusManager\\CampusManager.Web\\CampusManager.db";
+    protected static String ConnectString = "jdbc:sqlite:" + DbPath;
     protected static Connection DbConnection;
     protected abstract String getTableName();
     protected abstract String[] getColumnName();

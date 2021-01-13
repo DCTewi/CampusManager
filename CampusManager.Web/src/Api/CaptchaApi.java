@@ -1,9 +1,8 @@
 package Api;
 
 import Service.CaptchaService;
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,8 +25,9 @@ public class CaptchaApi extends HttpServlet
         resp.setContentType("image/jpeg");
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(stream);
-        encoder.encode(captcha);
+//        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(stream);
+//        encoder.encode(captcha);
+        ImageIO.write(captcha, "jpg", stream);
 
         byte[] res = stream.toByteArray();
         resp.setContentLength(res.length);
